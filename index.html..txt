@@ -1,0 +1,1102 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Piel y Palabra: maquillaje, skincare y belleza coreana. Encuentra tus productos favoritos y descubre nuestras ofertas.">
+  <title>Piel y Palabra | Belleza y skincare</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --beige: #eee5d9;
+      --beige-light: #f8f5f0;
+      --brown: #806b59;
+      --dark: #332b25;
+      --white: #fff;
+      --pink: #e8cfc9;
+      --green: #68765c;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--dark);
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    button, input, select { font: inherit; }
+
+    button { cursor: pointer; }
+
+    a { color: inherit; text-decoration: none; }
+
+    .announcement {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 9px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    header {
+      background: rgba(255,255,255,.96);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid #eee8e1;
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 29px;
+      font-weight: 600;
+      letter-spacing: .5px;
+      color: var(--dark);
+    }
+
+    .logo span { color: var(--brown); }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    nav a:hover { color: var(--brown); }
+
+    .cart-button, .main-button {
+      background: var(--dark);
+      color: white;
+      border: 0;
+      padding: 11px 18px;
+      border-radius: 3px;
+      transition: .2s;
+    }
+
+    .cart-button:hover, .main-button:hover {
+      background: var(--brown);
+    }
+
+    .hero {
+      min-height: 510px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(248,245,240,.97) 0%, rgba(248,245,240,.88) 48%, rgba(248,245,240,.12) 100%),
+        url("https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1800&q=85") center/cover;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      padding: 70px 30px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--brown);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1.1;
+      max-width: 570px;
+      margin: 17px 0;
+    }
+
+    .hero p {
+      max-width: 440px;
+      color: #61564d;
+      margin-bottom: 25px;
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 75px 25px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font-size: 38px;
+      margin: 8px 0;
+    }
+
+    .section-heading p {
+      color: #81766d;
+      font-size: 14px;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: var(--beige-light);
+      padding: 28px 20px;
+      text-align: center;
+      gap: 20px;
+    }
+
+    .benefits strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .benefits span {
+      font-size: 12px;
+      color: #796e65;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 25px 0;
+    }
+
+    .filter {
+      padding: 9px 17px;
+      border: 1px solid #ded4c9;
+      color: var(--dark);
+      background: white;
+      border-radius: 30px;
+      font-size: 12px;
+    }
+
+    .filter.active, .filter:hover {
+      background: var(--dark);
+      color: white;
+      border-color: var(--dark);
+    }
+
+    .tools {
+      display: flex;
+      gap: 12px;
+      justify-content: space-between;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+
+    .tools input, .tools select {
+      border: 1px solid #ded4c9;
+      background: white;
+      padding: 11px 13px;
+      border-radius: 3px;
+      color: var(--dark);
+    }
+
+    .tools input { flex: 1; min-width: 190px; }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px 18px;
+    }
+
+    .product-card {
+      border: 1px solid #eee9e3;
+      background: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image {
+      height: 245px;
+      background: var(--beige-light);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--pink);
+      color: #503b35;
+      padding: 5px 9px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    .product-info { padding: 16px; }
+
+    .category {
+      color: var(--brown);
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    .product-info h3 {
+      font-size: 19px;
+      margin: 5px 0;
+      line-height: 1.3;
+      min-height: 49px;
+    }
+
+    .description {
+      color: #81766d;
+      font-size: 12px;
+      min-height: 38px;
+    }
+
+    .price-line {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 12px 0;
+    }
+
+    .price { font-weight: 700; font-size: 16px; }
+
+    .old-price {
+      color: #9c9289;
+      text-decoration: line-through;
+      font-size: 12px;
+    }
+
+    .add-button {
+      width: 100%;
+      background: var(--beige);
+      border: 0;
+      padding: 11px;
+      color: var(--dark);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .add-button:hover {
+      background: var(--dark);
+      color: white;
+    }
+
+    .about {
+      background: var(--beige-light);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-image {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+    }
+
+    .about h2 { font-size: 38px; margin: 10px 0 18px; }
+
+    .about p { color: #71665d; margin-bottom: 15px; }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 35px;
+    }
+
+    .value {
+      padding: 20px;
+      background: white;
+      border: 1px solid #eee8e1;
+    }
+
+    .value h3 { font-size: 20px; margin-bottom: 7px; }
+
+    .value p { font-size: 12px; margin: 0; }
+
+    .legal {
+      background: #f4eee6;
+      padding: 35px 25px;
+    }
+
+    .legal-inner {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .legal h2 {
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .legal p, .legal li {
+      font-size: 13px;
+      color: #62574e;
+    }
+
+    .legal ul { padding-left: 20px; margin: 10px 0; }
+
+    .legal a {
+      text-decoration: underline;
+      color: var(--brown);
+    }
+
+    .newsletter {
+      text-align: center;
+      background: #e8ddd0;
+      padding: 55px 20px;
+    }
+
+    .newsletter h2 { font-size: 32px; margin-bottom: 8px; }
+
+    .newsletter p { color: #6e6258; font-size: 13px; }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 40px 25px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    footer p, footer a {
+      font-size: 12px;
+      color: #d8cec4;
+    }
+
+    footer a { text-decoration: underline; }
+
+    .footer-logo { font-family: "Playfair Display", serif; font-size: 25px; }
+
+    .copyright {
+      max-width: 1200px;
+      margin: 25px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid #51463e;
+      font-size: 11px;
+      color: #b9aea4;
+    }
+
+    /* Carrito */
+    .cart-panel {
+      position: fixed;
+      top: 0;
+      right: -440px;
+      width: min(420px, 100%);
+      height: 100vh;
+      background: white;
+      z-index: 50;
+      box-shadow: -5px 0 25px #0002;
+      padding: 25px;
+      transition: .3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-panel.open { right: 0; }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 15px;
+    }
+
+    .cart-header h2 { font-size: 25px; }
+
+    .close-cart {
+      border: 0;
+      background: none;
+      font-size: 25px;
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 15px 0;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid #eee;
+      padding: 13px 0;
+      font-size: 13px;
+    }
+
+    .cart-item small { color: #85796f; display: block; }
+
+    .quantity button {
+      border: 1px solid #ddd;
+      background: white;
+      padding: 2px 8px;
+      margin: 5px 2px;
+    }
+
+    .cart-total {
+      border-top: 1px solid #ddd;
+      padding-top: 17px;
+    }
+
+    .cart-total strong { font-size: 20px; }
+
+    .checkout-button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 13px;
+      background: var(--dark);
+      color: white;
+      border: 0;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #0007;
+      z-index: 40;
+    }
+
+    .overlay.show { display: block; }
+
+    .empty { color: #897e74; text-align: center; padding: 40px 0; }
+
+    @media (max-width: 850px) {
+      .products { grid-template-columns: repeat(2, 1fr); }
+      nav { gap: 12px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-image { height: 300px; }
+    }
+
+    @media (max-width: 560px) {
+      .navbar { flex-wrap: wrap; padding: 14px; }
+      .logo { font-size: 24px; }
+      nav { order: 3; width: 100%; justify-content: center; flex-wrap: wrap; }
+      .hero { min-height: 440px; background-position: 60% center; }
+      .hero-content { padding: 50px 22px; }
+      .products { gap: 12px; }
+      .product-image { height: 175px; }
+      .product-info { padding: 11px; }
+      .product-info h3 { font-size: 16px; }
+      .description { font-size: 11px; }
+      .values { grid-template-columns: 1fr; }
+      .benefits { grid-template-columns: 1fr; }
+      .section { padding: 50px 15px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="announcement">
+    ✨ ENVÍOS A TODO MÉXICO · DESCUBRE NUESTRAS OFERTAS ✨
+  </div>
+
+  <header>
+    <div class="navbar">
+      <a class="logo" href="#">Piel <span>y</span> Palabra</a>
+
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#aviso-legal">Aviso legal</a>
+      </nav>
+
+      <button class="cart-button" onclick="toggleCart()">
+        Mi carrito (<span id="cart-count">0</span>)
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <span class="eyebrow">Belleza que habla de ti</span>
+        <h1>Tu belleza, tu esencia, tu momento.</h1>
+        <p>
+          Descubre productos de maquillaje y skincare de tus marcas favoritas.
+          Encuentra todo lo que necesitas para consentirte y expresar tu estilo.
+        </p>
+        <a class="main-button" href="#productos">Explorar productos</a>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div>
+        <strong>♡ Variedad de marcas</strong>
+        <span>Opciones para diferentes gustos y presupuestos.</span>
+      </div>
+      <div>
+        <strong>✧ Belleza coreana</strong>
+        <span>Descubre tendencias de skincare de Corea.</span>
+      </div>
+      <div>
+        <strong>♡ Ofertas especiales</strong>
+        <span>Encuentra tus favoritos a precios especiales.</span>
+      </div>
+    </section>
+
+    <section class="section" id="productos">
+      <div class="section-heading">
+        <span class="eyebrow">Nuestra selección</span>
+        <h2>Encuentra tus favoritos</h2>
+        <p>Maquillaje, cuidado facial y productos para consentirte.</p>
+      </div>
+
+      <div class="filters">
+        <button class="filter active" onclick="setFilter('todos', this)">Todos</button>
+        <button class="filter" onclick="setFilter('maquillaje', this)">Maquillaje</button>
+        <button class="filter" onclick="setFilter('skincare', this)">Skincare</button>
+        <button class="filter" onclick="setFilter('coreano', this)">Belleza coreana</button>
+        <button class="filter" onclick="setFilter('ofertas', this)">Ofertas</button>
+      </div>
+
+      <div class="tools">
+        <input id="search" type="search" placeholder="Buscar un producto..." oninput="renderProducts()">
+        <select id="sort" onchange="renderProducts()">
+          <option value="default">Ordenar productos</option>
+          <option value="low">Precio: menor a mayor</option>
+          <option value="high">Precio: mayor a menor</option>
+        </select>
+      </div>
+
+      <div class="products" id="products-grid"></div>
+    </section>
+
+    <section class="about" id="nosotros">
+      <div class="section">
+        <div class="about-grid">
+          <div>
+            <span class="eyebrow">Conoce nuestra esencia</span>
+            <h2>Más que belleza, una forma de expresarte.</h2>
+            <p>
+              En Piel y Palabra creemos que la belleza no consiste en cumplir
+              con un estándar, sino en sentirse bien con uno mismo.
+            </p>
+            <p>
+              Por eso buscamos ofrecer productos que permitan a cada persona
+              expresar su estilo, cuidar su piel y disfrutar de momentos de
+              autocuidado.
+            </p>
+            <p><strong>Tu belleza, tu esencia, tu momento.</strong></p>
+          </div>
+
+          <img class="about-image"
+            src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=1000&q=85"
+            alt="Productos de belleza y cuidado personal">
+        </div>
+
+        <div class="values">
+          <div class="value">
+            <h3>Misión</h3>
+            <p>
+              Ofrecer productos de maquillaje y cuidado de la piel de calidad,
+              seleccionando marcas nacionales e internacionales para diferentes
+              necesidades, gustos y presupuestos. Buscamos brindar una experiencia
+              de compra agradable, accesible y confiable.
+            </p>
+          </div>
+
+          <div class="value">
+            <h3>Visión</h3>
+            <p>
+              Convertirnos en una tienda de belleza reconocida por la variedad
+              y calidad de nuestros productos, incorporando tendencias
+              internacionales y destacando el cuidado coreano de la piel.
+            </p>
+          </div>
+
+          <div class="value">
+            <h3>Valores</h3>
+            <p>
+              Calidad, confianza, inclusión, honestidad, innovación y compromiso.
+              Queremos que cada cliente encuentre opciones adecuadas a su estilo
+              y presupuesto.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="legal" id="aviso-legal">
+      <div class="legal-inner">
+        <span class="eyebrow">Compra informada y responsable</span>
+        <h2>Aviso legal y protección al cliente</h2>
+
+        <p>
+          En Piel y Palabra reconocemos la importancia de los derechos de las
+          personas consumidoras y de la protección de sus datos personales.
+          Las operaciones comerciales que se realicen a través de esta tienda
+          deberán atender la legislación mexicana aplicable, incluyendo la
+          Ley Federal de Protección al Consumidor y la Ley Federal de Protección
+          de Datos Personales en Posesión de los Particulares.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Información transparente:</strong> procuraremos mostrar
+            precios, características, promociones y condiciones de compra de
+            manera clara y comprensible.
+          </li>
+          <li>
+            <strong>Derechos del consumidor:</strong> las compras por medios
+            electrónicos están sujetas a las disposiciones aplicables de la
+            legislación mexicana en materia de protección al consumidor.
+          </li>
+          <li>
+            <strong>Datos personales:</strong> cualquier dato personal que se
+            recabe deberá tratarse conforme a la legislación aplicable y al
+            aviso de privacidad correspondiente.
+          </li>
+          <li>
+            <strong>Seguridad:</strong> se deberán implementar medidas
+            administrativas, técnicas y físicas adecuadas para proteger la
+            información de los clientes. No solicitaremos datos bancarios
+            directamente mediante esta página de demostración.
+          </li>
+        </ul>
+
+        <p>
+          Para conocer cómo se utilizan, almacenan y protegen los datos
+          personales, el negocio deberá publicar un aviso de privacidad
+          completo que identifique al responsable, las finalidades del
+          tratamiento y los medios para ejercer los derechos correspondientes.
+        </p>
+
+        <p style="margin-top:12px">
+          Consulta las leyes en sus fuentes oficiales:
+          <a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDC.pdf"
+             target="_blank" rel="noopener">Ley Federal de Protección al Consumidor</a>
+          y
+          <a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf"
+             target="_blank" rel="noopener">Ley Federal de Protección de Datos Personales</a>.
+        </p>
+
+        <p style="margin-top:12px">
+          <strong>Importante:</strong> este aviso es informativo y no constituye
+          una certificación de cumplimiento legal ni una garantía absoluta de
+          seguridad. El funcionamiento de las medidas de protección depende de
+          su implementación efectiva por parte del negocio y de los servicios
+          tecnológicos que utilice.
+        </p>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <h2>Un momento para ti</h2>
+      <p>Descubre nuevos productos, tendencias y promociones de belleza.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Piel y Palabra</div>
+        <p>Tu belleza, tu esencia, tu momento.</p>
+      </div>
+
+      <div>
+        <strong>Explora</strong>
+        <p><a href="#productos">Nuestros productos</a></p>
+        <p><a href="#nosotros">Conócenos</a></p>
+      </div>
+
+      <div>
+        <strong>Información</strong>
+        <p><a href="#aviso-legal">Aviso legal</a></p>
+        <p>Atención al cliente: agrega aquí tu correo.</p>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © 2026 Piel y Palabra. Todos los derechos reservados.
+      Precios y promociones de ejemplo sujetos a actualización.
+    </div>
+  </footer>
+
+  <!-- Carrito lateral -->
+  <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+
+  <aside class="cart-panel" id="cart-panel">
+    <div class="cart-header">
+      <h2>Tu carrito</h2>
+      <button class="close-cart" onclick="toggleCart()">×</button>
+    </div>
+
+    <div class="cart-items" id="cart-items">
+      <p class="empty">Tu carrito está vacío.</p>
+    </div>
+
+    <div class="cart-total">
+      <p>Subtotal</p>
+      <strong id="cart-total">$0.00 MXN</strong>
+      <button class="checkout-button" onclick="checkout()">
+        Finalizar pedido
+      </button>
+      <p style="font-size:11px;color:#8b8178;margin-top:10px">
+        Esta versión es una demostración. No procesa pagos reales.
+      </p>
+    </div>
+  </aside>
+
+  <script>
+    // Productos y precios de ejemplo en pesos mexicanos.
+    const products = [
+      {
+        id: 1,
+        name: "Fit Me Matte + Poreless",
+        brand: "Maybelline",
+        category: "maquillaje",
+        price: 199,
+        oldPrice: 249,
+        offer: true,
+        description: "Base de maquillaje de acabado mate.",
+        image: "https://images.unsplash.com/photo-1631214540242-2c7e9b4e7a1e?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 2,
+        name: "Butter Gloss",
+        brand: "NYX",
+        category: "maquillaje",
+        price: 149,
+        oldPrice: 179,
+        offer: true,
+        description: "Brillo labial suave y luminoso.",
+        image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 3,
+        name: "Halo Glow Liquid Filter",
+        brand: "e.l.f.",
+        category: "maquillaje",
+        price: 299,
+        oldPrice: null,
+        offer: false,
+        description: "Producto iluminador para el rostro.",
+        image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 4,
+        name: "Lash Paradise",
+        brand: "L'Oréal Paris",
+        category: "maquillaje",
+        price: 229,
+        oldPrice: 269,
+        offer: true,
+        description: "Máscara para dar volumen a las pestañas.",
+        image: "https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 5,
+        name: "Niacinamide 10% + Zinc 1%",
+        brand: "The Ordinary",
+        category: "skincare",
+        price: 230,
+        oldPrice: null,
+        offer: false,
+        description: "Suero facial para el cuidado de la piel.",
+        image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 6,
+        name: "Crema hidratante",
+        brand: "CeraVe",
+        category: "skincare",
+        price: 280,
+        oldPrice: 320,
+        offer: true,
+        description: "Hidratación para rostro y cuerpo.",
+        image: "https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 7,
+        name: "Hydro Boost Water Gel",
+        brand: "Neutrogena",
+        category: "skincare",
+        price: 310,
+        oldPrice: null,
+        offer: false,
+        description: "Gel hidratante de textura ligera.",
+        image: "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 8,
+        name: "Anthelios SPF 50+",
+        brand: "La Roche-Posay",
+        category: "skincare",
+        price: 430,
+        oldPrice: 490,
+        offer: true,
+        description: "Protector solar para el cuidado diario.",
+        image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 9,
+        name: "Relief Sun SPF50+",
+        brand: "Beauty of Joseon",
+        category: "coreano",
+        price: 460,
+        oldPrice: null,
+        offer: false,
+        description: "Protector solar coreano de textura ligera.",
+        image: "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 10,
+        name: "Advanced Snail 96 Essence",
+        brand: "COSRX",
+        category: "coreano",
+        price: 420,
+        oldPrice: 480,
+        offer: true,
+        description: "Esencia facial con filtrado de mucina de caracol.",
+        image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 11,
+        name: "Heartleaf 77% Toner",
+        brand: "ANUA",
+        category: "coreano",
+        price: 550,
+        oldPrice: null,
+        offer: false,
+        description: "Tónico facial para la rutina de skincare.",
+        image: "https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 12,
+        name: "Madagascar Centella Ampoule",
+        brand: "SKIN1004",
+        category: "coreano",
+        price: 695,
+        oldPrice: 750,
+        offer: true,
+        description: "Ampolleta facial de cuidado coreano.",
+        image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 13,
+        name: "Lip Sleeping Mask",
+        brand: "Laneige",
+        category: "coreano",
+        price: 499,
+        oldPrice: null,
+        offer: false,
+        description: "Mascarilla nocturna para labios.",
+        image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=700&q=80"
+      }
+    ];
+
+    let currentFilter = "todos";
+    let cart = [];
+
+    const money = amount =>
+      amount.toLocaleString("es-MX", {
+        style: "currency",
+        currency: "MXN"
+      });
+
+    function renderProducts() {
+      const search = document.getElementById("search").value.toLowerCase();
+      const sort = document.getElementById("sort").value;
+
+      let filtered = products.filter(product => {
+        const matchesSearch =
+          product.name.toLowerCase().includes(search) ||
+          product.brand.toLowerCase().includes(search);
+
+        let matchesFilter = true;
+
+        if (currentFilter === "maquillaje" || currentFilter === "skincare") {
+          matchesFilter = product.category === currentFilter;
+        } else if (currentFilter === "coreano") {
+          matchesFilter = product.category === "coreano";
+        } else if (currentFilter === "ofertas") {
+          matchesFilter = product.offer;
+        }
+
+        return matchesSearch && matchesFilter;
+      });
+
+      if (sort === "low") filtered.sort((a, b) => a.price - b.price);
+      if (sort === "high") filtered.sort((a, b) => b.price - a.price);
+
+      const grid = document.getElementById("products-grid");
+
+      if (filtered.length === 0) {
+        grid.innerHTML = "<p>No encontramos productos con esa búsqueda.</p>";
+        return;
+      }
+
+      grid.innerHTML = filtered.map(product => `
+        <article class="product-card">
+          <div class="product-image">
+            <img src="${product.image}" alt="${product.brand} ${product.name}"
+                 loading="lazy">
+            ${product.offer ? '<span class="tag">Oferta</span>' : ""}
+          </div>
+          <div class="product-info">
+            <span class="category">${product.brand}</span>
+            <h3>${product.name}</h3>
+            <p class="description">${product.description}</p>
+            <div class="price-line">
+              <span class="price">${money(product.price)}</span>
+              ${product.oldPrice
+                ? `<span class="old-price">${money(product.oldPrice)}</span>`
+                : ""}
+            </div>
+            <button class="add-button" onclick="addToCart(${product.id})">
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function setFilter(filter, button) {
+      currentFilter = filter;
+      document.querySelectorAll(".filter").forEach(btn =>
+        btn.classList.remove("active")
+      );
+      button.classList.add("active");
+      renderProducts();
+    }
+
+    function addToCart(id) {
+      const existing = cart.find(item => item.id === id);
+
+      if (existing) {
+        existing.quantity++;
+      } else {
+        cart.push({ id, quantity: 1 });
+      }
+
+      updateCart();
+    }
+
+    function changeQuantity(id, amount) {
+      const item = cart.find(item => item.id === id);
+      if (!item) return;
+
+      item.quantity += amount;
+
+      if (item.quantity <= 0) {
+        cart = cart.filter(item => item.id !== id);
+      }
+
+      updateCart();
+    }
+
+    function updateCart() {
+      const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+      document.getElementById("cart-count").textContent = count;
+
+      const container = document.getElementById("cart-items");
+
+      if (cart.length === 0) {
+        container.innerHTML = '<p class="empty">Tu carrito está vacío.</p>';
+      } else {
+        container.innerHTML = cart.map(item => {
+          const product = products.find(p => p.id === item.id);
+
+          return `
+            <div class="cart-item">
+              <div>
+                <strong>${product.name}</strong>
+                <small>${product.brand} · ${money(product.price)}</small>
+                <div class="quantity">
+                  <button onclick="changeQuantity(${item.id}, -1)">−</button>
+                  ${item.quantity}
+                  <button onclick="changeQuantity(${item.id}, 1)">+</button>
+                </div>
+              </div>
+              <strong>${money(product.price * item.quantity)}</strong>
+            </div>
+          `;
+        }).join("");
+      }
+
+      const total = cart.reduce((sum, item) => {
+        const product = products.find(p => p.id === item.id);
+        return sum + product.price * item.quantity;
+      }, 0);
+
+      document.getElementById("cart-total").textContent = money(total);
+    }
+
+    function toggleCart() {
+      document.getElementById("cart-panel").classList.toggle("open");
+      document.getElementById("overlay").classList.toggle("show");
+    }
+
+    function checkout() {
+      if (cart.length === 0) {
+        alert("Agrega al menos un producto a tu carrito.");
+        return;
+      }
+
+      alert(
+        "¡Gracias por visitar Piel y Palabra!\\n\\n" +
+        "Esta es una versión de demostración. " +
+        "Para recibir pedidos y aceptar pagos reales, " +
+        "se necesita configurar una plataforma de pago y un sistema de pedidos."
+      );
+    }
+
+    renderProducts();
+    updateCart();
+  </script>
+</body>
+</html>
